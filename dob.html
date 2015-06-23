@@ -1,0 +1,61 @@
+<html>
+<head>
+</head>
+<body>
+	<input id = "myage">
+<script>
+	var myage = documentElementById("myage");
+	myage.addElementListener("keypress",age(dob));
+	function age(e){
+		var number = number.myage;
+		if (e.which ! == 13) {
+			return;
+		}
+		var db = new Date(e);
+
+		var today = new Date();
+		console.log(today);
+		
+		var ty = today.getFullYear();
+		console.log(ty);
+		var dy = db.getFullYear();
+		console.log(dy);
+		
+		var tm = today.getMonth()+1;
+		console.log(tm);
+		var dm = db.getMonth()+1;
+		console.log(dm);
+		
+		var td = today.getDate();
+		console.log(td);
+		var dd = db.getDate();
+		console.log(dd);
+		
+		var y = ty - dy;
+		console.log(y);
+		var m = tm - dm;
+		console.log(m);
+		var d = td - dd;
+		console.log(d);
+		
+		if ( m < 0 ) {
+			y = y - 1;
+			console.log(y);
+			m = m + 12;
+			console.log(m);
+		}	
+		
+		if ( d < 0 ) { 
+			m = m - 1;
+			console.log(m);
+			d = d + 30;
+			console.log(d);
+		}	
+		var myage = y + "year(s)" + m + "month(s)" + d + "day(s)";
+		return myage;
+	}
+	var k = age ("1989-11-20");
+	console.log(k);
+</script>
+</body>
+</html>
